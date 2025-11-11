@@ -1,0 +1,338 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Emmanuel Enwesi | Cybersecurity, Infrastructure & Leadership</title>
+    <!-- Load Tailwind CSS and custom configuration -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        /* Define colors using CSS variables for high-speed rendering */
+        :root {
+            --color-primary-blue: #031cab;
+            --color-highlight-yellow: #fde047;
+        }
+        
+        /* Custom Tailwind Configuration (now references CSS variables) */
+        tailwind.config = {
+          theme: {
+            extend: {
+              colors: {
+                'primary-blue': 'var(--color-primary-blue)',
+                'accent-gray': '#f4f5f7',
+                'highlight-yellow': 'var(--color-highlight-yellow)',
+              },
+              fontFamily: {
+                sans: ['Inter', 'sans-serif'],
+              }
+            }
+          }
+        }
+        
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap');
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #f8fafc; /* Subtle off-white background */
+        }
+        /* Style for Section Titles with a distinct underline */
+        .section-title {
+            position: relative;
+            font-weight: 800;
+            color: #1f2937; /* Dark text */
+        }
+        .section-title::after {
+            content: '';
+            display: block;
+            width: 70px;
+            height: 5px;
+            background-color: var(--color-primary-blue); /* Primary Blue underline */
+            margin-top: 8px;
+            border-radius: 9999px;
+        }
+        /* Modern Lift and Shadow Effect for Cards (Interactive) */
+        .card-lift {
+            transition: transform 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94), box-shadow 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+            box-shadow: 0 5px 15px -3px rgba(0, 0, 0, 0.08), 0 4px 6px -4px rgba(0, 0, 0, 0.05);
+        }
+        .card-lift:hover {
+            transform: translateY(-8px);
+            /* Custom shadow using the primary blue for a clean, lifted effect */
+            box-shadow: 0 20px 25px -5px rgba(3, 28, 171, 0.2), 0 10px 10px -5px rgba(3, 28, 171, 0.05); 
+        }
+        /* Avatar Placeholder Styling (Interactive) */
+        .avatar-placeholder {
+            animation: pulse-border 2s infinite ease-in-out;
+        }
+        @keyframes pulse-border {
+            0% { box-shadow: 0 0 0 0 rgba(253, 224, 71, 0.4); }
+            70% { box-shadow: 0 0 0 15px rgba(253, 224, 71, 0); }
+            100% { box-shadow: 0 0 0 0 rgba(253, 224, 71, 0); }
+        }
+    </style>
+</head>
+<body class="antialiased">
+
+    <div class="max-w-8xl mx-auto">
+        
+        <!-- STICKY NAVIGATION BAR (Interactive) -->
+        <nav id="navbar" class="sticky top-0 z-50 bg-white shadow-lg transition-shadow duration-300">
+            <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-4 flex justify-between items-center">
+                <a href="#hero" class="text-2xl font-extrabold text-primary-blue hover:text-highlight-yellow transition duration-300">
+                    E.<span class="text-gray-800">E</span>
+                </a>
+                <div class="hidden md:flex space-x-6 font-semibold">
+                    <a href="#skills" class="text-gray-600 hover:text-primary-blue transition duration-200">Skills</a>
+                    <a href="#projects" class="text-gray-600 hover:text-primary-blue transition duration-200">Projects</a>
+                    <a href="#code" class="text-gray-600 hover:text-primary-blue transition duration-200">Code/GitHub</a>
+                    <a href="#certs" class="text-gray-600 hover:text-primary-blue transition duration-200">Certifications</a>
+                    <a href="mailto:emmanuelenwesi@gmail.com" class="text-primary-blue hover:text-highlight-yellow transition duration-200">Contact</a>
+                </div>
+                <!-- Mobile Menu Button (Optional, can be added later) -->
+                <button class="md:hidden text-gray-600 hover:text-primary-blue" aria-label="Toggle navigation">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path></svg>
+                </button>
+            </div>
+        </nav>
+
+        <!-- HERO SECTION: Split Layout (Modernized Visuals) -->
+        <header id="hero" class="text-white pt-24 pb-16 md:py-32 px-4 sm:px-6 lg:px-8 shadow-2xl" style="background-color: var(--color-primary-blue);">
+            <div class="max-w-6xl mx-auto flex flex-col-reverse md:flex-row items-center gap-12">
+                
+                <!-- Left: Text and CTA -->
+                <div class="md:w-3/5 text-center md:text-left">
+                    <p class="text-xl font-medium mb-3 opacity-80">Hello, I'm Emmanuel Enwesi</p>
+                    <h1 class="text-6xl lg:text-7xl font-extrabold tracking-tight leading-tight">
+                        Security Expert & <span class="text-highlight-yellow">IT Strategist</span>
+                    </h1>
+                    <p class="mt-6 text-xl text-gray-200 max-w-lg mx-auto md:mx-0">
+                        I build and secure digital infrastructures. I specialize in blending <span class="font-bold">ISO Compliance, Forensics, and Pen-Testing</span> with full-stack IT leadership to scale organizations securely.
+                    </p>
+                    <div class="mt-10 flex flex-col sm:flex-row items-center justify-center md:justify-start space-y-4 sm:space-y-0 sm:space-x-6">
+                        <a href="#projects" class="inline-block bg-highlight-yellow text-primary-blue font-extrabold py-3 px-8 rounded-full shadow-xl hover:bg-yellow-300 transform hover:scale-[1.03] transition duration-300 ease-in-out">
+                            View Featured Projects
+                        </a>
+                        <a href="#code" class="inline-block text-white border-2 border-white font-medium py-3 px-8 rounded-full hover:bg-white hover:text-primary-blue transition duration-300 ease-in-out">
+                            Explore My Code
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Right: Photo Placeholder (Interactive) -->
+                <div class="md:w-2/5 flex justify-center md:justify-end">
+                    <div class="w-72 h-72 bg-gray-900 border-8 border-highlight-yellow rounded-full flex items-center justify-center text-4xl font-black text-highlight-yellow shadow-xl avatar-placeholder">
+                        <!-- Placeholder for Professional Photo - Replace with your image link or base64 data -->
+                        <span class="text-lg text-center leading-tight p-4">YOUR PROFESSIONAL PHOTO HERE</span>
+                    </div>
+                </div>
+            </div>
+        </header>
+
+        <!-- MAIN CONTENT AREA -->
+        <main class="py-16 px-4 sm:px-6 lg:px-8 max-w-6xl mx-auto">
+
+            <!-- TECHNICAL SKILLS SECTION (New and dynamic tags) -->
+            <section id="skills" class="mb-20">
+                <h2 class="section-title text-4xl mb-12">Technical Skills & Domain Mastery</h2>
+                
+                <div class="grid md:grid-cols-2 gap-8">
+                    
+                    <!-- Core Security Skills -->
+                    <div class="bg-white p-6 rounded-xl card-lift border-l-8 border-primary-blue">
+                        <h3 class="text-2xl font-bold mb-4 text-primary-blue">Cyber & Network Defense</h3>
+                        <div class="flex flex-wrap gap-2">
+                            <span class="bg-primary-blue/10 text-primary-blue px-3 py-1 rounded-full text-sm font-medium">Intrusion Detection & Data Correlation</span>
+                            <span class="bg-primary-blue/10 text-primary-blue px-3 py-1 rounded-full text-sm font-medium">Penetration Testing (Web/Network)</span>
+                            <span class="bg-primary-blue/10 text-primary-blue px-3 py-1 rounded-full text-sm font-medium">Digital Forensics (CSI Linux)</span>
+                            <span class="bg-primary-blue/10 text-primary-blue px-3 py-1 rounded-full text-sm font-medium">Cryptography & User Authentication</span>
+                            <span class="bg-primary-blue/10 text-primary-blue px-3 py-1 rounded-full text-sm font-medium">ISO-Compliant Policy Development</span>
+                        </div>
+                    </div>
+
+                    <!-- Infrastructure & Platforms -->
+                    <div class="bg-white p-6 rounded-xl card-lift border-l-8 border-primary-blue">
+                        <h3 class="text-2xl font-bold mb-4 text-primary-blue">Infrastructure & Cloud Platforms</h3>
+                        <div class="flex flex-wrap gap-2">
+                            <span class="bg-primary-blue/10 text-primary-blue px-3 py-1 rounded-full text-sm font-medium">Network Topology (OSI Model)</span>
+                            <span class="bg-primary-blue/10 text-primary-blue px-3 py-1 rounded-full text-sm font-medium">AWS & Azure AI</span>
+                            <span class="bg-primary-blue/10 text-primary-blue px-3 py-1 rounded-full text-sm font-medium">Distributed Computing Concepts</span>
+                            <span class="bg-primary-blue/10 text-primary-blue px-3 py-1 rounded-full text-sm font-medium">System Administration</span>
+                            <span class="bg-primary-blue/10 text-primary-blue px-3 py-1 rounded-full text-sm font-medium">Enterprise Risk Management</span>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- CORE EXPERTISE (Retaining this section for narrative depth) -->
+            <section class="mb-20">
+                <h2 class="section-title text-4xl mb-12">My Value in 3 Pillars</h2>
+                <div class="grid md:grid-cols-3 gap-8">
+                    
+                    <!-- Pillar 1: Security -->
+                    <div class="bg-white p-6 rounded-xl card-lift border-t-4 border-primary-blue">
+                        <h3 class="text-2xl font-bold mb-3 text-primary-blue">Cyber Defense & Offensive Skills</h3>
+                        <p class="text-gray-600 mb-4">I implement robust security strategies, from policy to practical exploit mitigation.</p>
+                        <ul class="text-gray-700 space-y-2 text-sm list-inside list-disc">
+                            <li>Developed and enforced <span class="font-bold">ISO-compliant</span> security policies (lanwilsonservicesltd).</li>
+                            <li>Hands-on <span class="font-bold">Penetration Testing</span> and WAF implementation for proactive defense.</li>
+                            <li>Certified expertise in digital investigation and threat management.</li>
+                        </ul>
+                    </div>
+
+                    <!-- Pillar 2: Solutions & Infrastructure -->
+                    <div class="bg-white p-6 rounded-xl card-lift border-t-4 border-primary-blue">
+                        <h3 class="text-2xl font-bold mb-3 text-primary-blue">IT Infrastructure & Cloud Solutions</h3>
+                        <p class="text-gray-600 mb-4">I build, maintain, and secure the foundational systems businesses rely on.</p>
+                        <ul class="text-gray-700 space-y-2 text-sm list-inside list-disc">
+                            <li>Mastery of System Administration, networking, and technical documentation.</li>
+                            <li>Competence in <span class="font-bold">AWS</span>, Azure AI, and data recovery/analytics.</li>
+                            <li>Delivered secure, responsive websites, managing domain, hosting, and SEO.</li>
+                        </ul>
+                    </div>
+
+                    <!-- Pillar 3: Leadership & Impact -->
+                    <div class="bg-white p-6 rounded-xl card-lift border-t-4 border-primary-blue">
+                        <h3 class="text-2xl font-bold mb-3 text-primary-blue">Strategic Leadership & Training</h3>
+                        <p class="text-gray-600 mb-4">I translate complexity into action, driving programmatic success and developing talent.</p>
+                        <ul class="text-gray-700 space-y-2 text-sm list-inside list-disc">
+                            <li>Secured key strategic partnership with <span class="font-bold">ISC2</span> for training initiatives.</li>
+                            <li>Designed and delivered training to <span class="font-bold">55+ individuals</span> (Emmanuel Enwesi Foundation).</li>
+                            <li>Led teams in fundraising, social media, and brand development.</li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+
+            <!-- GITHUB CODE & SCRIPTS SECTION (Interactive) -->
+            <section id="code" class="mb-20 p-8 bg-accent-gray rounded-3xl border border-gray-200 shadow-inner">
+                <h2 class="section-title text-4xl mb-6">Cybersecurity Code & Apps (GitHub)</h2>
+                <p class="text-lg text-gray-700 mb-8">
+                    My GitHub is where you'll find proof of concept: various <span class="font-bold">cybersecurity scripts, forensic tools, and infrastructure automation apps</span> developed in Python, Bash, and JavaScript. These showcase my ability to move beyond theory into practical, deployable code.
+                </p>
+                <div class="flex flex-col sm:flex-row items-center justify-between gap-6">
+                    <a href="https://github.com/YourGitHubUsername" target="_blank" class="w-full sm:w-auto flex items-center justify-center px-8 py-4 border border-transparent text-base font-extrabold rounded-full shadow-lg text-white bg-primary-blue hover:bg-opacity-90 transform hover:scale-[1.02] transition duration-300">
+                        <!-- GitHub Icon -->
+                        <svg class="w-6 h-6 mr-3" fill="currentColor" viewBox="0 0 24 24"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.373 3.438 9.927 8.207 11.506.6.111.828-.258.828-.574 0-.281-.01-1.026-.015-2.019-3.344.726-4.043-1.612-4.043-1.612-.546-1.385-1.332-1.751-1.332-1.751-1.085-.742.082-.727.082-.727 1.205.084 1.838 1.229 1.838 1.229 1.07 1.834 2.807 1.304 3.492.997.108-.775.419-1.304.762-1.602-2.665-.304-5.467-1.334-5.467-5.931 0-1.31.467-2.383 1.229-3.22-.124-.303-.531-1.523.116-3.176 0 0 1.002-.323 3.284 1.225 1.002-.276 2.064-.414 3.126-.419 1.062.005 2.124.143 3.126.419 2.282-1.548 3.284-1.225 3.284-1.225.647 1.653.24 2.873.116 3.176.763.837 1.229 1.91 1.229 3.22 0 4.58-2.805 5.62-5.478 5.92-.43.372-.816 1.109-.816 2.23 0 1.613.001 2.919.001 3.327 0 .318.225.688.834.576c4.766-1.577 8.2-6.131 8.2-11.506 0-6.627-5.373-12-12-12z"/></svg>
+                        VIEW ALL REPOSITORIES
+                    </a>
+                    <p class="text-sm text-gray-600">
+                        *Please replace 'YourGitHubUsername' in the code with your actual ID.*
+                    </p>
+                </div>
+            </section>
+
+            <!-- PROJECTS SPOTLIGHT SECTION -->
+            <section id="projects" class="mb-20">
+                <h2 class="section-title text-4xl mb-12">Project Spotlight: Secure Digital Presence</h2>
+                <div class="grid md:grid-cols-2 gap-8">
+                    
+                    <!-- Project Card 1: cyber4rall.org -->
+                    <div class="bg-white rounded-xl overflow-hidden shadow-lg card-lift">
+                        <div class="h-40 bg-highlight-yellow/20 flex items-center justify-center border-b border-primary-blue/20">
+                            <!-- Placeholder for project visual/screenshot -->
+                            <span class="text-primary-blue text-2xl font-semibold">Cyber4rall Website Screenshot</span>
+                        </div>
+                        <div class="p-6">
+                            <h3 class="text-2xl font-bold text-gray-900">Cyber4rall.org</h3>
+                            <p class="text-primary-blue font-medium mb-3">Cybersecurity Education & Solutions</p>
+                            <p class="text-gray-600">This platform showcases my commitment to accessible digital security. My contribution included full website development, responsive design, and integration of robust initial security measures like <span class="font-bold">WAF implementation</span> and pre-deployment vulnerability scans.</p>
+                            <a href="http://www.cyber4rall.org" target="_blank" class="mt-4 inline-block text-primary-blue font-bold hover:underline">
+                                Visit Live Site &rarr;
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- Project Card 2: Consulting Websites -->
+                    <div class="bg-white rounded-xl overflow-hidden shadow-lg card-lift">
+                        <div class="h-40 bg-highlight-yellow/20 flex items-center justify-center border-b border-primary-blue/20">
+                            <!-- Placeholder for project visual/screenshot -->
+                            <span class="text-primary-blue text-2xl font-semibold">Consulting Websites Screenshot</span>
+                        </div>
+                        <div class="p-6">
+                            <h3 class="text-2xl font-bold text-gray-900">Global Quality & Oceancreak Consult</h3>
+                            <p class="text-primary-blue font-medium mb-3">Consulting, Web Strategy & Maintenance</p>
+                            <p class="text-gray-600">Managed end-to-end digital presence, including website redevelopment, domain/hosting management, <span class="font-bold">SEO implementation</span>, and providing ongoing <span class="font-bold">cybersecurity advisory</span> and technical documentation for operational resilience.</p>
+                            <div class="mt-4 space-x-4">
+                                <a href="http://www.globalqualityservice.org" target="_blank" class="inline-block text-primary-blue font-bold hover:underline">
+                                    Global Quality &rarr;
+                                </a>
+                                <a href="http://www.oceancreak.org" target="_blank" class="inline-block text-primary-blue font-bold hover:underline">
+                                    Oceancreak &rarr;
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- CERTIFICATIONS SECTION -->
+            <section id="certs" class="mb-20">
+                <h2 class="section-title text-4xl mb-12">Certifications & Credentials</h2>
+                <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-4">
+                    
+                    <!-- Cert 1 (Core) -->
+                    <div class="p-4 bg-white rounded-lg card-lift border-l-4 border-highlight-yellow shadow-md">
+                        <h3 class="font-bold text-lg text-primary-blue">Certified in Cybersecurity (CC)</h3>
+                        <p class="text-sm text-gray-600">ISC2 | Oct 2023</p>
+                    </div>
+                    
+                    <!-- Cert 2 (Core) -->
+                    <div class="p-4 bg-white rounded-lg card-lift border-l-4 border-highlight-yellow shadow-md">
+                        <h3 class="font-bold text-lg text-primary-blue">CSI Linux Certified Investigator</h3>
+                        <p class="text-sm text-gray-600">CSI Linux | Oct 2023</p>
+                    </div>
+
+                    <!-- Cert 3 (Core) -->
+                    <div class="p-4 bg-white rounded-lg card-lift border-l-4 border-highlight-yellow shadow-md">
+                        <h3 class="font-bold text-lg text-primary-blue">Google IT Support Specialization</h3>
+                        <p class="text-sm text-gray-600">Google | Full Specialization</p>
+                    </div>
+
+                    <!-- Cert 4 (Core) -->
+                    <div class="p-4 bg-white rounded-lg card-lift border-l-4 border-highlight-yellow shadow-md">
+                        <h3 class="font-bold text-lg text-primary-blue">Network Defense / Cyber Threat Mgmt</h3>
+                        <p class="text-sm text-gray-600">Cisco | Multiple Certifications</p>
+                    </div>
+                    
+                    <!-- Cert 5 (Supporting) -->
+                    <div class="p-4 bg-white rounded-lg card-lift border-l-4 border-gray-400">
+                        <h3 class="font-bold text-lg text-gray-900">Azure AI Fundamentals</h3>
+                        <p class="text-sm text-gray-600">Microsoft | May 2023</p>
+                    </div>
+                    
+                    <!-- Cert 6 (Supporting) -->
+                    <div class="p-4 bg-white rounded-lg card-lift border-l-4 border-gray-400">
+                        <h3 class="font-bold text-lg text-gray-900">Data Analytics Job Simulation</h3>
+                        <p class="text-sm text-gray-600">Deloitte Australia | Apr 2025</p>
+                    </div>
+
+                    <!-- Cert 7 (Supporting) -->
+                    <div class="p-4 bg-white rounded-lg card-lift border-l-4 border-gray-400">
+                        <h3 class="font-bold text-lg text-gray-900">Responsive Web Design / SQL / Java</h3>
+                        <p class="text-sm text-gray-600">Sololearn | Development Fundamentals</p>
+                    </div>
+
+                    <!-- Cert 8 (Supporting) -->
+                    <div class="p-4 bg-white rounded-lg card-lift border-l-4 border-gray-400">
+                        <h3 class="font-bold text-lg text-gray-900">Nonprofit Essentials Certificate</h3>
+                        <p class="text-sm text-gray-600">NonprofitReady | Aug 2025</p>
+                    </div>
+
+                </div>
+            </section>
+        </main>
+
+        <!-- FOOTER -->
+        <footer class="bg-gray-900 text-white py-10 px-4 sm:px-6 lg:px-8">
+            <div class="max-w-6xl mx-auto flex flex-col md:flex-row justify-between items-center">
+                <p class="text-sm opacity-75">&copy; 2025 Emmanuel Enwesi. Built with Tailwind CSS.</p>
+                <div class="flex space-x-6 mt-4 md:mt-0">
+                    <a href="mailto:emmanuelenwesi@gmail.com" class="hover:text-highlight-yellow transition duration-300">Email</a>
+                    <a href="https://www.linkedin.com/in/emmanuel-enwesi-004ba1191" target="_blank" class="hover:text-highlight-yellow transition duration-300">LinkedIn</a>
+                    <a href="https://github.com/YourGitHubUsername" target="_blank" class="hover:text-highlight-yellow transition duration-300">GitHub</a>
+                </div>
+            </div>
+        </footer>
+    </div>
+
+</body>
+</html>
